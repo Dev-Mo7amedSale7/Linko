@@ -34,8 +34,8 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gear" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="spm-fX-In4">
-                                <rect key="frame" x="146.66666666666666" y="242.33333333333337" width="100" height="100"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gearshape" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="spm-fX-In4">
+                                <rect key="frame" x="146.66666666666666" y="242.66666666666666" width="100" height="99.666666666666657"/>
                                 <color key="tintColor" name="Primary"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="TWk-Mi-IQ8"/>
@@ -61,7 +61,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="gear" catalog="system" width="128" height="122"/>
+        <image name="gearshape" catalog="system" width="128" height="123"/>
         <namedColor name="Primary">
             <color red="0.8784313725490196" green="0.37254901960784315" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
