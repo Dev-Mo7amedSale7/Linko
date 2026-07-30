@@ -1,0 +1,50 @@
+PODS:
+  - Alamofire (5.9.1)
+  - Kingfisher (8.11.0)
+  - lottie-ios (4.6.1)
+  - RxCocoa (6.9.0):
+    - RxRelay (= 6.9.0)
+    - RxSwift (= 6.9.0)
+  - RxRelay (6.9.0):
+    - RxSwift (= 6.9.0)
+  - RxSwift (6.9.0)
+  - SnapKit (5.7.1)
+  - Socket.IO-Client-Swift (16.1.1):
+    - Starscream (~> 4.0.8)
+  - Starscream (4.0.8)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.9.0)
+  - Kingfisher
+  - lottie-ios
+  - RxCocoa
+  - RxSwift
+  - SnapKit
+  - Socket.IO-Client-Swift (~> 16.1)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Kingfisher
+    - lottie-ios
+    - RxCocoa
+    - RxRelay
+    - RxSwift
+    - SnapKit
+    - Socket.IO-Client-Swift
+    - Starscream
+
+SPEC CHECKSUMS:
+  Alamofire: f36a35757af4587d8e4f4bfa223ad10be2422b8c
+  Kingfisher: ee4ff4936d5b399164b6d01a0dfc0388583287b6
+  lottie-ios: 6467ca7035120c5b0e0acee58bb679cf15875686
+  RxCocoa: ac16414696ae706516be3e1ab00fcce5bdc9be8a
+  RxRelay: 6b0c930e5cef57d5fe2032571e5e65b78e3cbdb1
+  RxSwift: 31649ace6aceeb422e16ff71c60804f9c3281ed9
+  SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
+  Socket.IO-Client-Swift: 3614bea82ba005df1c2ff01154f4004993e05ad7
+  Starscream: 19b5533ddb925208db698f0ac508a100b884a1b9
+
+PODFILE CHECKSUM: 7fb10d0d478c59d01ab0bc52539ccd35f42dbfce
+
+COCOAPODS: 1.16.2

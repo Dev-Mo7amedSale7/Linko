@@ -1,0 +1,6 @@
+framework module Pods_Linko_LinkoUITests {
+  umbrella header "Pods-Linko-LinkoUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
