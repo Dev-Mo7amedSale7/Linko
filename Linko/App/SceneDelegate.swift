@@ -20,9 +20,29 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = scene as? UIWindowScene else { return }
 
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = MainTabBarController()
+
+        if isUserLoggedIn() {
+            window?.rootViewController = MainTabBarController()
+        } else {
+            let loginVC = LoginViewController.instantiate()
+            let nav = UINavigationController(rootViewController: loginVC)
+
+            window?.rootViewController = nav
+        }
+
         window?.makeKeyAndVisible()
     }
+
+
+    private func isUserLoggedIn() -> Bool {
+        guard let token = UserDefaults.standard.string(forKey: "token"),
+              !token.isEmpty else {
+            return false
+        }
+        
+        return true
+    }
+
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
         // This occurs shortly after the scene enters the background, or when its session is discarded.
