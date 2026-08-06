@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: BaseViewController {
     
     @IBOutlet weak var createAccountTitle: UILabel!
     @IBOutlet weak var fullNameLbl: UILabel!
@@ -28,7 +28,6 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        hideKeyboardWhenTappedAround()
         setupBackGesture()
     }
 
@@ -44,20 +43,7 @@ class RegisterViewController: UIViewController {
     @objc private func backTapped() {
         navigationController?.popViewController(animated: true)
     }
-    
-    private func hideKeyboardWhenTappedAround() {
-        let tap = UITapGestureRecognizer(
-            target: self,
-            action: #selector(dismissKeyboard)
-        )
-        
-        tap.cancelsTouchesInView = false
-        view.addGestureRecognizer(tap)
-    }
-    
-    @objc private func dismissKeyboard() {
-        view.endEditing(true)
-    }
+
     
     func setupUI() {
         navigationItem.hidesBackButton = true
@@ -82,9 +68,47 @@ class RegisterViewController: UIViewController {
     
     
     @IBAction func registerBtnAction(_ sender: Any) {
-        
-        // handel register
-        
+
+        guard
+            let name = fullNameTxf.text?.trimmingCharacters(in: .whitespacesAndNewlines),
+            !name.isEmpty,
+            let email = emailTxf.text?.trimmingCharacters(in: .whitespacesAndNewlines),
+            !email.isEmpty,
+            let password = passwordTxf.text,
+            !password.isEmpty
+        else {
+
+            showAlert(title: "Error", message: "Please fill all fields.")
+            return
+        }
+
+        registerBtn.isEnabled = false
+
+        AuthManager.shared.register(
+            name: name,
+            email: email,
+            password: password
+        ) { [weak self] result in
+
+            guard let self = self else { return }
+
+            self.registerBtn.isEnabled = true
+
+            switch result {
+
+            case .success(let response):
+
+                let message = response["message"] as? String ?? "User created successfully"
+
+                self.showAlert(title: "Success", message: message) {
+                    self.navigationController?.popViewController(animated: true)
+                }
+
+            case .failure(let error):
+
+                self.showAlert(title: "Error", message: error.localizedDescription)
+            }
+        }
     }
 }
 

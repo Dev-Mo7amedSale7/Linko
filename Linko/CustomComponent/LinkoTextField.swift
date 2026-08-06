@@ -29,7 +29,7 @@ class LinkoTextField: UITextField {
         layer.borderWidth = 1
         layer.borderColor = UIColor.textFaint.cgColor
         tintColor = .primaryDarkOrange
-        backgroundColor = .surface2
+        backgroundColor = .surface
         
         clipsToBounds = true
         

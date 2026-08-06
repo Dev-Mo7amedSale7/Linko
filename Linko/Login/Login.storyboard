@@ -17,13 +17,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wellcome Back" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ugE-rg-FiP">
-                                <rect key="frame" x="20" y="133" width="357" height="30"/>
+                                <rect key="frame" x="20" y="128" width="357" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="iyi-f1-pyp">
-                                <rect key="frame" x="20" y="216" width="353" height="178"/>
+                                <rect key="frame" x="20" y="211" width="353" height="178"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i6r-ZO-oIR">
                                         <rect key="frame" x="0.0" y="0.0" width="353" height="79"/>
@@ -84,7 +84,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LjV-MN-4zO">
-                                <rect key="frame" x="50" y="454" width="293" height="50"/>
+                                <rect key="frame" x="50" y="449" width="293" height="50"/>
                                 <color key="backgroundColor" name="primaryDarkOrange"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="owi-h4-gH8"/>
@@ -97,7 +97,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z7O-8e-ZSE">
-                                <rect key="frame" x="40" y="534" width="313" height="38.333333333333371"/>
+                                <rect key="frame" x="40" y="529" width="313" height="38.333333333333371"/>
                                 <color key="tintColor" name="textMuted"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Sign up"/>
@@ -106,7 +106,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log in to see your request and offers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTU-ys-6FS">
-                                <rect key="frame" x="20" y="173" width="353" height="18"/>
+                                <rect key="frame" x="20" y="168" width="353" height="18"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                 <color key="textColor" name="textMuted"/>
                                 <nil key="highlightedColor"/>
@@ -124,7 +124,7 @@
                             <constraint firstItem="iyi-f1-pyp" firstAttribute="leading" secondItem="Ipc-3w-wfJ" secondAttribute="leading" constant="20" id="YzI-WU-izI"/>
                             <constraint firstItem="LjV-MN-4zO" firstAttribute="top" secondItem="iyi-f1-pyp" secondAttribute="bottom" constant="60" id="hcO-go-oIo"/>
                             <constraint firstItem="ugE-rg-FiP" firstAttribute="leading" secondItem="Ipc-3w-wfJ" secondAttribute="leading" constant="20" id="jDj-xD-rsg"/>
-                            <constraint firstItem="ugE-rg-FiP" firstAttribute="top" secondItem="Ipc-3w-wfJ" secondAttribute="top" constant="15" id="tfx-i5-tnZ"/>
+                            <constraint firstItem="ugE-rg-FiP" firstAttribute="top" secondItem="Ipc-3w-wfJ" secondAttribute="top" constant="10" id="tfx-i5-tnZ"/>
                             <constraint firstItem="LjV-MN-4zO" firstAttribute="leading" secondItem="Ipc-3w-wfJ" secondAttribute="leading" constant="50" id="vf8-Lp-z9c"/>
                             <constraint firstItem="PTU-ys-6FS" firstAttribute="leading" secondItem="Ipc-3w-wfJ" secondAttribute="leading" constant="20" id="w2H-hA-eeU"/>
                             <constraint firstItem="Ipc-3w-wfJ" firstAttribute="trailing" secondItem="iyi-f1-pyp" secondAttribute="trailing" constant="20" id="w4a-n3-aI9"/>
@@ -150,7 +150,7 @@
     </scenes>
     <resources>
         <namedColor name="background">
-            <color red="0.078431372549019607" green="0.062745098039215685" blue="0.050980392156862744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.14117647058823529" green="0.10588235294117647" blue="0.078431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="primaryDarkOrange">
             <color red="0.76078431372549016" green="0.25490196078431371" blue="0.047058823529411764" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

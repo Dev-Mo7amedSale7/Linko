@@ -17,31 +17,32 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         options connectionOptions: UIScene.ConnectionOptions
     ) {
 
-        guard let windowScene = scene as? UIWindowScene else { return }
+        guard let windowScene = scene as? UIWindowScene else {
+            return
+        }
 
         window = UIWindow(windowScene: windowScene)
 
-        if isUserLoggedIn() {
-            window?.rootViewController = MainTabBarController()
-        } else {
-            let loginVC = LoginViewController.instantiate()
-            let nav = UINavigationController(rootViewController: loginVC)
+        let rootVC: UIViewController
 
-            window?.rootViewController = nav
+        if AuthManager.shared.isLoggedIn {
+
+            rootVC = MainTabBarController()
+
+        } else {
+
+            let loginVC = LoginViewController.instantiate()
+
+            rootVC = UINavigationController(
+                rootViewController: loginVC
+            )
         }
 
+
+        window?.rootViewController = rootVC
         window?.makeKeyAndVisible()
     }
 
-
-    private func isUserLoggedIn() -> Bool {
-        guard let token = UserDefaults.standard.string(forKey: "token"),
-              !token.isEmpty else {
-            return false
-        }
-        
-        return true
-    }
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.

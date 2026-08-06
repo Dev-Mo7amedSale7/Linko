@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: BaseViewController {
     
     
     @IBOutlet weak var wellcomeBackTitle: UILabel!
@@ -29,23 +29,10 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         setupUI()
-        hideKeyboardWhenTappedAround()
         setupSignUpButton()
     }
     
-    private func hideKeyboardWhenTappedAround() {
-        let tap = UITapGestureRecognizer(
-            target: self,
-            action: #selector(dismissKeyboard)
-        )
-        
-        tap.cancelsTouchesInView = false
-        view.addGestureRecognizer(tap)
-    }
-    
-    @objc private func dismissKeyboard() {
-        view.endEditing(true)
-    }
+
     
     
     
@@ -102,13 +89,84 @@ class LoginViewController: UIViewController {
         signUp.setAttributedTitle(attributedString, for: .normal)
     }
     
-    
-    
-    
     @IBAction func logInBtnBtnAction(_ sender: Any) {
-        
-        // handel login
-        
+
+        guard
+            let email = emailTxf.text?.trimmingCharacters(in: .whitespacesAndNewlines),
+            !email.isEmpty,
+            let password = passwordTxf.text,
+            !password.isEmpty
+        else {
+            showAlert(
+                title: "Error",
+                message: "Please enter email and password."
+            )
+            return
+        }
+
+
+        logInBtn.isEnabled = false
+
+
+        AuthManager.shared.login(
+            email: email,
+            password: password
+        ) { [weak self] result in
+
+            guard let self = self else { return }
+
+            self.logInBtn.isEnabled = true
+
+
+            switch result {
+
+            case .success(let response):
+
+                guard let token = response["access_token"] as? String,
+                      let user = response["user"] as? [String: Any],
+                      let userId = user["id"] as? Int
+                else {
+                    self.showAlert(
+                        title: "Error",
+                        message: "Invalid server response."
+                    )
+                    return
+                }
+
+
+                UserDefaults.standard.set(
+                    token,
+                    forKey: "accessToken"
+                )
+
+
+                UserDefaults.standard.set(
+                    userId,
+                    forKey: "currentUserId"
+                )
+
+
+                self.goToHome()
+
+
+            case .failure(let error):
+
+                self.showAlert(
+                    title: "Login Failed",
+                    message: error.localizedDescription
+                )
+            }
+        }
+    }
+    
+    private func goToHome() {
+
+        let vc = MainTabBarController()
+
+        navigationController?.setViewControllers(
+            [vc],
+            animated: true
+        )
     }
     
     @IBAction func signupBtnAction(_ sender: Any) {
