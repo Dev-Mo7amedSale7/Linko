@@ -21,25 +21,28 @@ class MainTabBarController: UITabBarController {
     private func setupTabs() {
         
         let homeVC = HomeViewController.instantiate()
+        let myProfile = MyProfileViewController.instantiate()
 
         
         
         let homeNav = UINavigationController(rootViewController: homeVC)
+        let myProfileNav = UINavigationController(rootViewController: myProfile)
 
         
         homeNav.navigationBar.prefersLargeTitles = true
+        myProfileNav.navigationBar.prefersLargeTitles = true
 
+        homeNav.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house"),
+                                          selectedImage: UIImage(systemName: "house.fill"))
         
-        homeNav.tabBarItem = UITabBarItem(
-            title: "Home",
-            image: UIImage(systemName: "house"),
-            selectedImage: UIImage(systemName: "house.fill")
-        )
+        myProfileNav.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "person.circle"),
+                                               selectedImage: UIImage(systemName: "person.circle.fill"))
         
 
         
         viewControllers = [
             homeNav,
+            myProfileNav,
       
         ]
     }

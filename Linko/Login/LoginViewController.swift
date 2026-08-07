@@ -97,10 +97,7 @@ class LoginViewController: BaseViewController {
             let password = passwordTxf.text,
             !password.isEmpty
         else {
-            showAlert(
-                title: "Error",
-                message: "Please enter email and password."
-            )
+            showAlert(title: "Error", message: "Please enter email and password.")
             return
         }
 
@@ -108,10 +105,7 @@ class LoginViewController: BaseViewController {
         logInBtn.isEnabled = false
 
 
-        AuthManager.shared.login(
-            email: email,
-            password: password
-        ) { [weak self] result in
+        AuthManager.shared.login(email: email, password: password) { [weak self] result in
 
             guard let self = self else { return }
 

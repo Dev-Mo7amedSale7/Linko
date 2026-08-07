@@ -24,7 +24,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
 
         let rootVC: UIViewController
-
         if AuthManager.shared.isLoggedIn {
 
             rootVC = MainTabBarController()
@@ -38,7 +37,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             )
         }
 
-
+        rootVC.view.backgroundColor = .background
         window?.rootViewController = rootVC
         window?.makeKeyAndVisible()
     }
